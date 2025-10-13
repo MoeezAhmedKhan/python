@@ -46,3 +46,27 @@ if orignalNum == rev:
     print(orignalNum, "Its is orignal ",rev, "Its is reversed and its is paindrom")
 else:
     print(orignalNum, "Its is orignal ",rev, "Its is reversed and its is not paindrom")
+
+
+# 4. Check number is even or odd
+
+num = int(input("Enter a anumber: "))
+while(num != 0):
+    if(num % 2 == 0):
+        print(num, "is even")
+    else:
+        print(num, "is odd")
+    num = int(input("Enter a anumber: "))
+else:
+    print(num, "is zero")
+    
+
+# 5. Print a table
+
+num = int(input("Enter a anumber: "))
+i = 1
+while(i <= 10):
+    print(num, "*", i, "=", (num * i))
+    i = i + 1
+else:
+    print("Table Printed Successful")
