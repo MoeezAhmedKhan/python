@@ -70,3 +70,63 @@ while(i <= 10):
     i = i + 1
 else:
     print("Table Printed Successful")
+
+
+# 6. Lets Start Develop a Small Game
+
+questionList = [
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "answer": "Mars",
+        "amount": 10,
+        "isUserRight": False
+    },
+    {
+        "question": "What is the chemical symbol for water?",
+        "answer": "H2O",
+        "amount": 20,
+        "isUserRight": False
+    },
+    {
+        "question": "Which language is used to create Android Apps?",
+        "answer": "Kotlin",
+        "amount": 30,
+        "isUserRight": False
+    },
+    {
+        "question": "Which is the largest ocean on Earth?",
+        "answer": "Pacific Ocean",
+        "amount": 40,
+        "isUserRight": False
+    },
+    {
+        "question": "Which device is used to measure atmospheric pressure?",
+        "answer": "Barometer",
+        "amount": 50,
+        "isUserRight": False
+    }
+]
+
+winingAmount = 0
+i = 0
+
+while i < len(questionList):
+    print("\nQuestion no", i + 1, ":", questionList[i]["question"])
+    getInput = input("Give your answer: ")
+
+    if getInput.lower() == questionList[i]["answer"].lower():
+        winingAmount += questionList[i]["amount"]
+        questionList[i]["isUserRight"] = True
+        print("Correct! You won", questionList[i]["amount"], "$")
+    else:
+        print("Wrong! Correct answer was:", questionList[i]["answer"])
+
+    i += 1
+
+print("\n--------------- Result ----------------\n")
+print("🎉 Total Winning Amount:", winingAmount, "$ 🎉")
+
+print("Wrong Questions with Correct Answers:\n")
+for i in questionList:
+    if not i["isUserRight"]:
+        print("-", i["question"], "→", i["answer"])
