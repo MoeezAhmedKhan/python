@@ -1,4 +1,5 @@
 # List Comprehension Practice Examples
+# Example syntax [new_item for item in iterable if condition]
 
 # 1. Take words from list which have more than 5 letters
 words = ["apple", "banana", "grape", "kiwi", "mango", "pear"]
