@@ -130,3 +130,121 @@ print("Wrong Questions with Correct Answers:\n")
 for i in questionList:
     if not i["isUserRight"]:
         print("-", i["question"], "→", i["answer"])
+
+
+
+
+# 7. Program to print the first 10 Fibonacci numbers
+
+# The Fibonacci series is a list of numbers where each new number is made by adding the previous two numbers.
+# The series always starts with 0 and 1.
+
+# Step 1: Initialize the first two numbers of the Fibonacci sequence
+n0 = 0
+n1 = 1
+
+# Step 2: Set how many Fibonacci numbers to print
+count = 10
+
+# Step 3: Use a loop to generate and print the series
+for i in range(count):
+    if i == 0:
+        # Print the first Fibonacci number (0)
+        print(n0, end=" ")
+    elif i == 1:
+        # Print the second Fibonacci number (1)
+        print(n1, end=" ")
+    else:
+        # Calculate the next Fibonacci number
+        result = n0 + n1
+
+        # Print the result
+        print(result, end=" ")
+
+        # Update previous two numbers for the next iteration
+        n0 = n1
+        n1 = result
+
+
+
+
+# 8. Write a Python program that takes a number n from the user and prints the Fibonacci number at that index along with the entire series up to that index.
+
+# Program to find the nth Fibonacci number and print the full series
+
+# Step 1: Initialize first two Fibonacci numbers
+n0 = 0
+n1 = 1
+
+# Step 2: Take input from the user for which Fibonacci index they want
+number = int(input("Enter a number to get Fibonacci value by index: "))
+
+# Step 3: Create an empty list to store Fibonacci series
+fabNumbers = []
+
+# Step 4: Generate Fibonacci numbers up to the given index
+for i in range(number):
+    if i == 0:
+        # First Fibonacci number is always 0
+        fabNumbers.append(n0)
+    elif i == 1:
+        # Second Fibonacci number is always 1
+        fabNumbers.append(n1)
+    else:
+        # Calculate the next Fibonacci number
+        result = n0 + n1
+        fabNumbers.append(result)
+
+        # Update the previous two numbers for next loop
+        n0 = n1
+        n1 = result
+
+# Step 5: Print the nth Fibonacci number
+print("Fibonacci number at index", number, "is:", fabNumbers[number - 1])
+
+# Step 6: Print the complete Fibonacci series up to that index
+print("Full Fibonacci series up to index", number, "is:", fabNumbers)
+
+
+
+# 9 Lets Start OS Moduke
+
+import os
+import shutil
+
+if not os.path.exists("learn"):
+    os.makedirs("learn") 
+
+print(os.getcwd())
+os.chdir("F:/Moeez/Cloud Data Engineering/python/learn") # change directory
+print(os.getcwd())
+i = 1
+while i <= 100:
+    # os.makedirs(f"learn/folder{i}")
+    # os.rename(f"learn/folder{i}", f"learn/myfolder{i}")
+    shutil.rmtree(f"myfolder{i}") # for delete directory
+    i+=1
+
+
+# WAP to check word lenght and its is greater than 3 then append random words in start and end else return word in reversed order
+
+import random
+import string
+def encode_word(word):
+    if len(word) >= 3:
+        start = ''.join(random.choices(string.ascii_letters, k=3))
+        end = ''.join(random.choices(string.ascii_letters, k=3))
+        return f"{start}{word[1:]}{word[0]}{end}"
+    else:
+        return word[::-1]
+
+print(encode_word(input("Give a word: ")))
+print(encode_word(input("Give a word: ")))
+
+
+
+
+
+
+
+
