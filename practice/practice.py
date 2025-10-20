@@ -243,6 +243,73 @@ print(encode_word(input("Give a word: ")))
 
 
 
+# 10. Python File I/O: Read Student Marks from File, Assign Grades, and Generate Result Summary
+
+# Before Code Improvement
+studentFile = open("student.txt", 'r')
+studentData = studentFile.read()
+studentList = studentData.split("\n")
+studentMap = []
+for i in studentList:
+    subList = i.split(',')
+    for j in range(len(subList)):
+        if(j == 0):
+            studentMap.append({"name":subList[0], "marks":subList[1]})
+
+for i in studentMap:
+    if int(i['marks']) > 80:
+        i['grade'] = 'A'
+    elif int(i['marks']) >= 60 and int(i['marks']) < 79:
+        i['grade'] = 'B'
+    else:
+        i['grade'] = 'Failed'
+
+
+with open('result.txt','w') as f:
+    for i in studentMap:
+        f.write(f"{i['name']} - {i['grade']}{f' Grade' if i['grade'] != 'Failed' else ''}\n")
+
+
+
+# After Code Improvement   
+# Read file
+with open("student.txt", 'r') as studentFile:
+    studentList = studentFile.read().splitlines()
+
+studentMap = []
+for line in studentList:
+    name, marks = line.split(',')
+    studentMap.append({"name": name, "marks": marks})
+
+# # Assign grades
+for s in studentMap:
+    if int(s['marks']) >= 80:
+        s['grade'] = 'A'
+    elif 60 <= int(s['marks']) < 80:
+        s['grade'] = 'B'
+    else:
+        s['grade'] = 'Failed'
+
+# # Write result file
+with open("result.txt", "w") as f:
+    for s in studentMap:
+        grade_text = f"{s['grade']} Grade" if s['grade'] != 'Failed' else "Failed"
+        f.write(f"{s['name']} - {grade_text}\n")
+
+# # Print summary
+total = len(studentMap)
+a_count = sum(1 for s in studentMap if s['grade'] == 'A')
+b_count = sum(1 for s in studentMap if s['grade'] == 'B')
+fail_count = sum(1 for s in studentMap if s['grade'] == 'Failed')
+
+print(f"Total Students: {total}")
+print(f"A Grade: {a_count}")
+print(f"B Grade: {b_count}")
+print(f"Failed: {fail_count}")
+
+
+
+
 
 
 
