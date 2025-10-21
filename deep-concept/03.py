@@ -6,7 +6,7 @@ def sum(x,y):
 
 sum(10,5)
 
-# lambda i like an annonymous function
+# lambda like an annonymous function
 sum = lambda x,y:x+y
 print(sum(20,20))
 
