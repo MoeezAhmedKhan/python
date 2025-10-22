@@ -1,3 +1,11 @@
+# Write a Python program (using OOP) to rename all files of a specific extension inside a given folder.
+# The program should:
+# Ask the user for folder path, file extension, and base name.
+# Rename files as BaseName01.ext, BaseName02.ext, etc.
+# Stop safely if a file with the new name already exists.
+# Show clear messages for success, conflicts, or missing files.
+# Use the os module and a class structure (FileRenamer).
+
 import os
 
 class FileRenamer:
