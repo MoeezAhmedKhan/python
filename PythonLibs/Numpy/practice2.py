@@ -16,7 +16,7 @@ print(restaurant_sales[:,1:]) # : (All rows) 1: Columns starting from index 1 (s
 
 # Get Total Sales Per Year
 
-yearlySale = np.sum(restaurant_sales[:,1:]) # Ids then total
+yearlySale = np.sum(restaurant_sales[:,1:]) # Skip Ids then total
 print(f"Total Yearly Sale (without IDs): {yearlySale}")
 
 yearlySale = np.sum(restaurant_sales[:,1:], axis=1) # axis = 1 (Sum row wise)

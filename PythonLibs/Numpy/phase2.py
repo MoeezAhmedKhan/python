@@ -86,10 +86,10 @@ print(f"Adding a column in existing array \n{np.hstack((orignalAr,new_Ar))}") # 
 # Deleting element
 
 arr = np.array([12,2,3,4,55,66])
-deleted = np.delete(arr, 2) # Its take arra and second argument used for slicing index
+deleted = np.delete(arr, 2) # Its take array and second argument used for slicing index
 print(f"Array after deletion {deleted}")
 
-# Adding in each element element
+# Adding in each element
 arr = np.array([22,33,44,55,66])
 added = np.add(arr,89) # The second argument (89) is added to each element of the existing array
 print(f"Added in each element of array {added}")
