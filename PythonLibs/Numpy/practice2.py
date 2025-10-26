@@ -40,9 +40,29 @@ print(f"Cumulative Sum Row Wise: \n{cum_sum}")
 
 # Now We just plot cunsum into Matplotlib
 
-plt.figure(figsize=(8,8))
-plt.plot(np.mean(cum_sum, axis=0))
-plt.title("Average of Cumulative Sum")
-plt.xlabel("Years")
-plt.ylabel("Sales")
-plt.show()
+plt.figure(figsize=(6,6)) # Size of Chart
+years = [2020, 2021, 2022, 2023, 2024]
+plt.plot(years,np.mean(cum_sum, axis=0)) # Data Ploting Average of Cumulative Sum Year Wise of Total Restaurant
+plt.title("Average of Cumulative Sum") # Title of Chart
+plt.xlabel("Years") # Label in x axis
+plt.ylabel("Sales") # Label is y axis
+# plt.show() # It triggger plot on screen
+
+
+# Now the operations with vector
+
+vector1 = np.array([1,2,3,4,5])
+vector2 = np.array([6,7,8,9,10])
+print(f"Additing boht vectors {vector1+vector2}")
+print(f"Multiplocation boht vectors {vector1*vector2}")
+print(f"Dot Product boht vectors {np.dot(vector1,vector2)}") # Dot Product First Mltiple then in both side then add - 6 + 14 + 24 + 36 + 50 = 130
+
+getAnAgnle = np.arccos(np.dot(vector1, vector2) / (np.linalg.norm(vector1) * np.linalg.norm(vector2)))
+print(f"Angle Betwen Both Vector {getAnAgnle}")
+
+
+# Vectorized Operation
+# np.vectorize() allows a normal Python function to be applied to each element of a NumPy array without using a loop.
+restaurant_names = np.array(["alvigha food", "bBQ tonight", "sakura", "okra", "lalqila"])
+vectorized_uppr = np.vectorize(str.upper)
+print(f"Restaurant Convert into Upper Case Throught Vectorize {vectorized_uppr(restaurant_names)}")
