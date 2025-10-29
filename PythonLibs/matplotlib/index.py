@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 # Key Terms We Should Know:
 
-# 1. Data Point - A single pair of x and y values in the dataset
+# 1. Data Point - a single pair of x and y values in the dataset, e.g. (2, 5) where x = 2 and y = 5.
 # 2. X-axis / Y-axis - Horizontal and vertical axes of the graph
 # 3. Figure - The canvas where the graph is plotted
 # 4. Axes - The actual area in the figure where the graph is drawn
@@ -67,6 +67,6 @@ plt.ylabel("Sales Data")
 plt.title("Monthly Sales Data")
 plt.legend(loc='upper left', fontsize=7) # It show plot label (2025 Sales Data) on the graph
 plt.grid(color="red", linestyle=":", linewidth=1)
-plt.xlim(1,4)
-plt.ylim(0, 2122)
+plt.xlim(1,4) # How much of the X-axis you want to show (from 1 to 4).
+plt.ylim(0, 2122) # How much of the Y-axis you want to show (from 0 to 2122).
 plt.show()
