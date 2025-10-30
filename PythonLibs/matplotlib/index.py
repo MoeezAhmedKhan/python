@@ -18,11 +18,11 @@ import matplotlib.pyplot as plt
 # Plot a Line Graph
 # To plot a graph, we need x-axis and y-axis values as list/array
 
-# xList = [1, 2, 3, 4]
-# yList = [10, 20, 10, 25]
+xList = [1, 2, 3, 4]
+yList = [10, 20, 10, 25]
 
-# plt.plot(xList, yList)  # Plot the line graph
-# plt.show()  # This renders the graph on the screen; it is required to call this
+plt.plot(xList, yList)  # Plot the line graph
+plt.show()  # This renders the graph on the screen; it is required to call this
 
 # Key Terms We Should Know:
 
@@ -46,14 +46,14 @@ import matplotlib.pyplot as plt
 # 18. DPI (Dots Per Inch) - Resolution of the figure
 # 19. Backend - The rendering engine used by Matplotlib
 
-# x = ['Monday','Tuesday','Wednesday','Thursday','Friday']
-# y = [1010, 2000, 889, 55, 400]
+x = ['Monday','Tuesday','Wednesday','Thursday','Friday']
+y = [1010, 2000, 889, 55, 400]
 
-# plt.plot(x, y)
-# plt.title("Bakery Sales This Week")
-# plt.xlabel("Days of the week")
-# plt.ylabel("Sales Per day")
-# plt.show()
+plt.plot(x, y)
+plt.title("Bakery Sales This Week")
+plt.xlabel("Days of the week")
+plt.ylabel("Sales Per day")
+plt.show()
 
 # Now Understand About Plot Which Argment can takes Plot fuction
 # It is used to create Line Chart
@@ -69,4 +69,41 @@ plt.legend(loc='upper left', fontsize=7) # It show plot label (2025 Sales Data) 
 plt.grid(color="red", linestyle=":", linewidth=1)
 plt.xlim(1,4) # How much of the X-axis you want to show (from 1 to 4).
 plt.ylim(0, 2122) # How much of the Y-axis you want to show (from 0 to 2122).
+plt.xticks(month, ["1st Month", "2nd Month", "3rd Month", "4th Month"])  # Clear labels on X-axis
+plt.yticks(sales, [f"${i}" for i in sales])  # only shows ticks at your data points
 plt.show()
+
+
+# Now:
+# Bar Charts, Histogram, And Pie Chart is commonly used Chart
+
+# Bar Charts:
+# Bar chart is used to compare different items or categories by showing their values as vertical or horizontal bars, making it easy to see which item is bigger or smaller.
+# plt.bar(x, height, color='color name', width = value, marker='o', label='label here') - Syntax
+
+product = ['A Product', 'B Product', 'C Product', 'D Product', 'E Product']
+sales = [1800, 1100, 800, 400, 2000]
+plt.bar(product, sales, color = "lightblue", label="Product Sales")
+plt.xlabel("Products")
+plt.ylabel("Sales Data")
+plt.title("Product Sales Data")
+plt.legend()
+plt.grid(color="red", linestyle=":", linewidth=2)
+plt.show()
+
+
+# Pie Chart:
+# Pie chart is used to show how different parts contribute to the whole, with each slice representing a percentage of the total, making it easy to understand the proportion of each part
+# values → Numbers for slice sizes (e.g., revenue).
+# labels → Names for each slice (e.g., region names).
+# autopct → (Shows each slice as a percentage of the total) inside the slice.
+
+# plt.pie(value, label="label here", color="color name", autopc-"%1.1f%%") -Syntax
+
+region = ["North", "South", "East", "West"]
+revenue = [1000, 700, 2000, 1200]
+plt.pie(revenue, labels=region, autopct="%1.1f%%", colors=['gold','lightgreen','lightblue','coral'])
+plt.title("Revenue Contribution By Region")
+plt.show()
+
+
