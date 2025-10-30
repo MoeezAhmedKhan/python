@@ -98,7 +98,7 @@ plt.show()
 # labels → Names for each slice (e.g., region names).
 # autopct → (Shows each slice as a percentage of the total) inside the slice.
 
-# plt.pie(value, label="label here", color="color name", autopc-"%1.1f%%") -Syntax
+# plt.pie(value, label="label here", color="color name", autopc-"%1.1f%%") - Syntax
 
 region = ["North", "South", "East", "West"]
 revenue = [1000, 700, 2000, 1200]
@@ -107,3 +107,78 @@ plt.title("Revenue Contribution By Region")
 plt.show()
 
 
+# Histogram:
+# Histogram is used to show how many data points fall within different ranges of continuous values,
+# helping to see how data is distributed (spread) across values.
+
+# Continuous means data that can take any value within a range (e.g., scores, height, temperature).
+# Example: If 3 students scored between 20–30, and 5 students between 30–40,
+# histogram shows two bars — one for each range.
+
+# plt.hist(data, bins=number_of_bins, color='colorname', edgecolor='bordercolorhere') - Syntax
+# 'bins' means how many ranges (groups) you want to divide your data into.
+
+score = [22, 44, 36, 77, 49, 54, 30, 89, 84, 25, 84, 33, 66, 90, 55]
+
+print(f"Min {min(score)}")  # Histogram takes minimum value (22)
+print(f"Max {max(score)}")  # Then takes maximum value (90)
+# Then histogram takes range between min and max → (Max - Min) = 90 - 22 = 68 → total range = 68
+# Range divided by number of bins → (68 / 5 = 13.6) → each bin covers 13.6 values
+
+# So bins (ranges) are divided as:
+# Bin 1: 22.0 – 35.6 → Scores: [22, 25, 30, 33] → 4 students
+# Bin 2: 35.6 – 49.2 → Scores: [36, 44, 49] → 3 students
+# Bin 3: 49.2 – 62.8 → Scores: [54, 55] → 2 students
+# Bin 4: 62.8 – 76.4 → Scores: [66, 77] → 2 students
+# Bin 5: 76.4 – 90.0 → Scores: [84, 84, 89, 90] → 4 students
+# Bars in histogram represent these counts (4, 3, 2, 2, 4)
+
+print(f"Sorted {sorted(score)}")  # Histogram sorts data internally before plotting
+
+plt.hist(score, bins=5, color='lightblue', edgecolor='purple')
+plt.xlabel("Score Range")
+plt.ylabel("Number of Students")
+plt.title("Score Distribution of Students")
+plt.show()
+
+
+# Scatter Plot:
+# A scatter plot is used to show the relationship between two continuous variables
+# by displaying data points on a graph.
+# Each point represents one observation (x = input, y = output).
+# It is commonly used in Machine Learning to see how one variable affects another.
+
+# Example:
+# Suppose we analyze student data:
+#   X-axis → Hours studied
+#   Y-axis → Marks obtained
+# From the pattern of points, we can see if studying more hours leads to better marks.
+
+# plt.scatter(data_of_xaxis, data_of_yaxis, color="colorname", marker="marker style", label="label name") - Syntax
+
+hourstudies = [1, 2, 3, 4, 5]
+marks = [50, 66, 71, 89, 92]
+
+plt.scatter(hourstudies, marks, color="red", marker="^", label="Student Data")
+plt.xlabel("Hours Studied")   # X-axis label
+plt.ylabel("Exam Marks")      # Y-axis label
+plt.title("Relationship between Study Time and Exam Marks")
+plt.legend()                  # Shows label name on the chart
+plt.grid()                    # Adds grid lines for better visibility
+plt.show()                    # Displays the scatter plot
+
+
+# Grouped Scatter Plot:
+# Sometimes, we want to compare two or more groups on the same graph.
+# For example, comparing Section A vs Section B students.
+
+plt.scatter([2, 4, 6, 8, 12], [30, 40, 50, 80, 100], color="green", marker="^", label="Section A Students")
+
+plt.scatter([2, 4, 6, 8, 12], [20, 30, 40, 50, 60],  color="red", marker="o", label="Section B Students")
+
+plt.xlabel("Hours Studied")   # X-axis shows study time
+plt.ylabel("Exam Marks")      # Y-axis shows marks
+plt.title("Comparison: Study Time vs Exam Marks (Section A vs B)")
+plt.legend()                  # Differentiates the two sections
+plt.grid()                    # Adds background grid lines
+plt.show()                    # Displays the grouped scatter plot
